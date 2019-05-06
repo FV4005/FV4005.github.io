@@ -76,59 +76,61 @@
   </form>
   <hr>
 
-    <p>个人信息调查表</p>
-    <form action="h">
-      <dl>
-          <dt>性别</dt>
-          <dd>男<input type="radio" name="sex" value="男">
-              女<input type="radio" name="sex" value="女">
-          </dd>
-      </dl>
+  <p>个人信息调查表</p>
+  <form action="">
     <dl>
-        <dt>年龄</dt>
-        <dd><select name="age" id="age">
+      <dt>性别</dt>
+      <dd>
+        男<input type="radio" name="gender" value="male">
+        女<input type="radio" name="gender" value="female">
+      </dd>
+    </dl>
+    <dl>
+      <dt>年龄</dt>
+      <dd>
+        <select name="age" id="age">
+          <option value="" selected hidden>请选择</option>
           <optgroup label="少年">
-            <option value="请选择" selected hidden>请选择</option>
-            <option value="1-6">1-6岁</option>
-            <option value="6-12">6-12岁</option>
+            <option value="1-6"></option>
+            <option value="6-12"></option>
           </optgroup>
           <optgroup label="青年">
-              <option value="13-15">13-15岁</option>
-              <option value="16-18">16-18岁</option>
-            </optgroup>
-            <optgroup label="壮年">
-                <option value="18-22">18-22</option>
-                <option value="23-30">23-30</option>
-              </optgroup>
+            <option value="13-15"></option>
+            <option value="16-18"></option>
+          </optgroup>
+          <optgroup label="壮年">
+            <option value="18-22"></option>
+            <option value="23-30"></option>
+          </optgroup>
         </select>
-       </dd>
+      </dd>
     </dl>
     <dl>
-        <dt>生辰</dt>
-        <dd><input type="time" name="birth"></dd>
+      <dt>生日</dt>
+      <dd>
+        <input type="date" name="birth">
+      </dd>
     </dl>
-
     <dl>
-        <dt>照片</dt>
-        <dd><label for="img">点我上传照片，我比文件上传按钮好看</label>
-          <input type="file" id="img" name="img" hidden>
-        </dd>
+      <dt>照片</dt>
+      <dd>
+
+       <label>点我上传照片，我比文件上传按钮好看<input type="file" name="file" hidden></label>
+
+      </dd>
     </dl>
-
-
-<dl>
-  <dt>肤色</dt>
-  <dd><input type="color" name="color"></dd>
-</dl>
-<dl>
-    <dt>自我介绍</dt>
-    <dd>
-        <textarea name="" id="" cols="30" rows="10">&lt;/textarea>
-          </textarea>
-    </dd>
-
-</dl>
-
+    <dl>
+      <dt>肤色</dt>
+      <dd>
+        <input type="color" name="color">
+      </dd>
+    </dl>
+    <dl>
+      <dt>自我介绍</dt>
+      <dd>
+        <textarea name="self" id="" cols="30" rows="10">&lt;/textarea</textarea>
+      </dd>
+    </dl>
     <fieldset>
       <legend>这里面的全都禁用了</legend>
       <input type="text" disabled><input type="text" disabled><input type="text" disabled><input type="text" disabled>
