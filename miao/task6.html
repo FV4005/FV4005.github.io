@@ -84,7 +84,7 @@
           </dd>
       </dl>
     <dl>
-        <dl>年龄</dl>
+        <dt>年龄</dt>
         <dd><select name="age" id="age">
           <optgroup label="少年">
             <option value="请选择" selected hidden>请选择</option>
@@ -92,12 +92,12 @@
             <option value="6-12">6-12岁</option>
           </optgroup>
           <optgroup label="青年">
-              <option value="">13-15岁</option>
-              <option value="">16-18岁</option>
+              <option value="13-15">13-15岁</option>
+              <option value="16-18">16-18岁</option>
             </optgroup>
             <optgroup label="壮年">
-                <option value="">18-22</option>
-                <option value="">23-30</option>
+                <option value="18-22">18-22</option>
+                <option value="23-30">23-30</option>
               </optgroup>
         </select>
        </dd>
@@ -132,7 +132,7 @@
       <legend>这里面的全都禁用了</legend>
       <input type="text" disabled><input type="text" disabled><input type="text" disabled><input type="text" disabled>
     </fieldset>
-    <input type="submit" value="提交">
+    <input id="footer" type="submit" value="提交">
     <input type="reset" value="重置">
   </form>
 </body>
