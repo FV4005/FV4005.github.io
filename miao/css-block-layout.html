@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 头部 */
+    *{
+      margin: 0;
+    }
+  header{
+    background-color: black;
+  }
+  header>p{
+    width: 600px;
+    margin:auto;
+    color: white
+  }
+
+  /* 主体 */
+  section{
+    width: 600px;
+    margin: 15px auto;
+  }
+
+  section>div{
+    width: 174px;
+    height: 34px;
+    border: 3px solid;
+    margin-top: 15px;
+    background-color: rgb(255,192,203);
+    text-align: center;
+    line-height: 34px;
+  }
+  section>div:hover{
+    background-color: red;
+  }
+  section>div:nth-child(3n+3){
+    margin-left: 195px;
+    margin-top: -40px;
+  }
+  section>div:nth-child(3n+4){
+    margin-left: 390px;
+    margin-top: -40px;
+  }
+
+  section>p:not(:nth-of-type(1))
+  {
+    xborder-bottom: 1px dotted;
+  }
+  section>p:not(:nth-last-of-type(1)){
+    border-bottom: 1px dotted;
+  }
+
+/* 底部 */
+  footer{
+    background-color: rgb(238,130,238);
+  }
+  footer>p{
+    width: 600px;
+    margin: auto;
+    text-align: center;
+
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <p>hello world 请调整浏览器窗口大小查看结果</p>
+  </header>
+  <section>
+    <p style="border:none;">页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
+
+    <div>宽180高40(包含边框)</div>
+    <div>产品</div>
+    <div>产品</div>
+    <div>水平间隙30px</div>
+    <div>产品</div>
+    <div>产品</div>
+    <div>垂直间隙15px</div>
+    <div>产品</div>
+    <div>产品</div>
+    <div>边框宽度3px</div>
+    <div>产品</div>
+    <div>产品</div>
+
+    <p>link</p>
+    <p>link</p>
+    <p>link</p>
+    <p>link</p>
+    <p>link</p>
+  </section>
+  <footer>
+    <p>&copy;版权所有</p>
+    <p>本页所有布局均使用块元素</p>
+  </footer>
+</body>
+</html>
