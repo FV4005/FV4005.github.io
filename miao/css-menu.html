@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+ul{
+  list-style:none;
+  padding:0;
+  position:absolute;
+}
+ul li {
+  position:relative;
+  white-space:nowrap;
+}
+li:hover {
+  background-color:orange;
+  cursor:pointer;
+}
+
+ul ul{
+  display:none;
+  position:absolute;
+  top:0;
+  left:100%;
+}
+li:hover > ul{
+  display:block;
+}
+  </style>
+</head>
+<body>
+  <ul>
+    <li>文件
+       <ul>
+         <li>提交
+           <ul>
+             <li>111
+               <ul>
+                 <li>aaa</li>
+                 <li>bbb</li>
+                 <li>ccc</li>
+               </ul>
+             </li>
+             <li>222</li>
+             <li>333</li>
+           </ul>
+         </li>
+         <li>保存
+           <ul>
+             <li>保存到C盘</li>
+             <li>保存到D盘</li>
+             <li>保存到F盘</li>
+           </ul>
+         </li>
+         <li>更新到...</li>
+       </ul>
+    </li>
+    <li>编辑</li>
+    <li>保存</li>
+    <li>取消</li>
+  </ul>
+</body>
+</html>
