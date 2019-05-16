@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>radio-slider</title>
+  <style>
+    .slider{
+      width: 500px;
+      height: 360px;
+      border: 3px solid;
+      position: relative;
+    }
+    .slider img{
+      /* display: none; */
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      transition:  1s;
+      position: absolute;
+      top: 0;
+    }
+    .slider input{
+      display: none;
+    }
+    .ragroup{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+    }
+    .ragroup label{
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border: 3px solid;
+      cursor:pointer;
+      background-color:white;
+    }
+    .slider input:checked + img {
+      /* display: block; */
+      opacity: 1;
+    }
+    .slider input:checked label{
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+    <div class="slider">
+
+        <input checked type="radio" name="map" id="map1">
+        <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3207781657,3460758070&fm=27&gp=0.jpg" alt="">
+
+        <input type="radio" name="map" id="map2">
+        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1179289982,1144911896&fm=27&gp=0.jpg" alt="">
+
+        <input type="radio" name="map" id="map3">
+        <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1690699292,1481547313&fm=27&gp=0.jpg" alt="">
+
+        <input type="radio" name="map" id="map4">
+        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3395395711,851131180&fm=27&gp=0.jpg" alt="">
+
+        <div class="ragroup">
+            <label for="map1"></label>
+            <label for="map2"></label>
+            <label for="map3"></label>
+            <label for="map4"></label>
+          </div>
+    </div>
+</body>
+</html>
