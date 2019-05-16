@@ -11,10 +11,11 @@
       box-sizing: border-box;
       width: 200px;
       height: 100px;
-      border: 5px solid;
+      /* border: 5px solid; */
       border-radius: 58px;
       background-color: rgb(221, 221, 221);
-      transition: background-color 1s ease;
+      transition: background-color 0.6s ease;
+      /* box-shadow: 0 0 2px gray; */
     }
     .circle{
       box-sizing: border-box;
@@ -24,17 +25,20 @@
       border-radius: 50%;
       background-color: white;
       position: relative;
+      left: 5px;
+      top: 5px;
+      transition:   0.6s linear;
     }
     input{
       display: none;
     }
     input:checked + label{
       background-color: rgb(110, 221, 94);
-      transition: background-color 1s ease;
+      transition: background-color 0.6s ease;
     }
     input:checked + label > .circle {
-      left:100px;
-      transition: left 5s linear;
+      left:105px;
+      transition: left 0.6s linear;
     }
 
   </style>
