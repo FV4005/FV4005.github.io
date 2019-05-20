@@ -23,11 +23,37 @@
     left: 50%;
     transform: translate(-50%, -50%)
    }
+
+/* 行内布局 中心居中 */
+   .cn{
+  box-sizing:boeder-box;
+  width:200px;
+  height: 200px;
+  line-height:200px;
+  display:inline-block;
+  border:3px solid;
+  text-align:center;
+}
+.rn{
+  box-sizing:boeder-box;
+  width:100px;
+  height: 100px;
+  display:inline-block;
+  border:3px solid;
+  vertical-align:middle;
+}
   </style>
 </head>
 <body>
+  <!-- 定位布局 中心居中 -->
   <div class="demo1">
       <div class="demo2"></div>
+  </div>
+
+
+  <!-- 行内布局  中心居中 -->
+  <div class="cn">
+    <div class="rn"></div>
   </div>
 
 </body>

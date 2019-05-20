@@ -42,7 +42,10 @@
       /* display: block; */
       opacity: 1;
     }
-    .slider input:checked label{
+    .slider input:checked :nth-child(1) ~ div label:nth-child(1),
+    .slider input:checked :nth-child(2) ~ div label:nth-child(2),
+    .slider input:checked :nth-child(3) ~ div label:nth-child(3),
+    .slider input:checked :nth-child(4) ~ div label:nth-child(4){
       background-color: aquamarine;
     }
   </style>
