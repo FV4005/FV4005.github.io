@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+
+table{
+  border-collapse:collapse;
+  width:100%;
+
+}
+table td ,th {
+  padding: .75rem;
+  vertical-align: top;
+  text-align:left;
+  }
+table tr ,th{
+  border-bottom:1px solid #dee2e6 ;
+  }
+table  td {
+  padding: .75rem;
+  vertical-align: top;
+  text-align:left;
+  }
+tbody tr:nth-last-child(1),
+tbody tr:nth-last-child(1) > th{
+  border:none;
+ }
+
+/* table-dark */
+.table-dark{
+  color:white;
+  background-color:#343A40;
+}
+.table-dark  tbody tr:nth-child(odd){
+   background-color:#343A40;
+}
+
+/* table-striped */
+.table-striped tbody tr:nth-child(odd)
+  {
+    background-color: #dee2e6;
+  }
+
+/* .table-striped.table-dark */
+.table-striped.table-dark  tbody tr:nth-child(odd){
+ background-color:#3E444A;
+}
+
+
+/* table-bordered */
+.table-bordered{
+  border:1px solid #dee2e6;
+}
+.table-bordered col{
+  border:1px solid #dee2e6;
+}
+
+/* table-borderless */
+.table-borderless tr, .table-borderless td ,.table-borderless th{
+  border:none;
+}
+/* .table-hover */
+.table-hover td,.table-hover tr,.table-hover th{
+  border:0;
+}
+.table-hover tbody tr:hover{
+  background-color:rgba(0,0,0,.075);
+}
+
+.table-hover.table-dark tbody tr:hover{
+  background-color:rgba(255,255,255,.075);
+}
+.table-hover.table-dark{
+  border:none;
+  border-spacing:0;
+}
+
+  </style>
+</head>
+<body>
+ <table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+   <!-- hidden -->
+  <table class="table-bordered" hidden>
+    <col>
+    <col>
+    <col>
+    <col>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+</body>
+</html>
