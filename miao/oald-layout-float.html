@@ -1,129 +1,58 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<style type="text/css">
-			*{
-				margin: 0;padding: 0;
-			}
-			/*设置头部div*/
-			.header{
-				/*设置一个宽度*/
-				width: 100%;
-				/*设置一个高度*/
-				height: 150px;
-				/*设置一个背景颜色*/
-				background-color: yellowgreen;
-				/*设置居中*/
-				margin: 0 auto;
-				min-width: 500px;
-			}
-			/*设置一个content*/
-			.content{
-				width: 100%;
-				height: 800px;
-				background-color: skyblue;
-				/*margin: 10px auto;*/
-				min-width: 500px;
-			}
-			/*设置content中小div的样式*/
-							.left{
-							   width: 15%;
-							   height: 100%;
-							   background-color: yellow;
-							   /*向左浮动*/
-							   float: left;
-									}
-							.cener{
-							   width: 55%;
-							   height: 100%;
-							   background-color: orange;
-							   /*margin: 0 10px;*/
-							    /*向左浮动*/
-							   float: left;
-									}
-							.right1{
-							   width: 15%;
-							   height: 100%;
-							   background-color: pink;
-							    /*向左浮动*/
-							   float: left;
-									}
-									.right2{
-							   width: 15%;
-							   height: 100%;
-							   background-color: lightcoral;
-							    /*向左浮动*/
-							   float: left;
-									}
-			.footer{
-				width: 100%;
-				height: 200px;
-				background-color: yellowgreen;
-				margin: 0 auto;
-			}
-			ul{
-				list-style: none;
-			}
-			/*nav*/
-			.nav{
-				list-style: none;
-				/*background-color: #baf;*/
-				width: 100%;
-				margin: 0 auto;
-				overflow: hidden;
-				zoom: 1;
-			}
-			.nav li{
-				float: left;
-				width: 25%;
-			}
-			.nav a{
-				display: inline-block;
-				width:100%;
-				text-align: center;
-				padding: 7px 0;
-				text-decoration: none;
-				color: wheat;
-				font-weight: bold;
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+	<title>JS Bin</title>
+	<style>
+		*{
+  background-color: rgb(0,0,0,0.08);
+}
+html,body{
+  height: 100%;
+}
+.a,.b,.c{
+  width: 100px;
+  height: 100%;
+  float:left;
+  background-color:red;
+}
+.b,.c{
+  float: right;
+}
+.b{
+  background-color: green;
+}
+.c{
+  background-color: tan;
+}
 
-			}
-			/*设置鼠标移入的效果*/
-			.nav a:hover {
-				background-color: #c00;
-				transition:1s;
-			}
-		</style>
-	</head>
-	<body>
-		<!--头部div-->
-		<div class="header">
-			<ul class="nav">
-			<li><a href="#">首页</a></li>
-			<li><a href="#">新闻	</a></li>
-			<li><a href="#">联系</a></li>
-			<li><a href="#">关于</a></li>
-		</ul>
-		</div>
-		<!--主题内容div-->
-		<div class="content">
-			<!--左侧div-->
-			<div class="left">
-				<ul>
-					<li>
-					llll
+main{
+  overflow:hidden;
+  box-shadow: 0 0 10px inset;
+  height: 100%;
+  background-color:yellow;
+}
+header{
+  height: 50px;
+  background-color:blue;
+}
 
-					</li>
-				</ul>
-			</div>
-			<!--中间div-->
-			<div class="cener"></div>
-			<!--右侧div-->
-			<div class="right1"></div>
-			<div class="right2"></div>
-		</div>
-		<!--底部信息 div-->
-		<div class="footer"></div>
-	</body>
+
+
+
+
+	</style>
+</head>
+<body>
+  <div class="a"></div>
+
+  <div class="c"></div>
+  <div class="b"></div>
+  <main>
+    <header>
+      aaa
+    </header>
+  </main>
+</body>
 </html>
