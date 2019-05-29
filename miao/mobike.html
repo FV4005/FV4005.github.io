@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      background-color: rgba(0,0,0,0.08);
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    div {
+      /* border: 1px solid; */
+      overflow: hidden;
+      /* padding: 2px; */
+    }
+    section {
+      width:100%;
+      min-height: 300px;
+      background-image:url(https://mobike.com/cn/assets/themes/moby/img/landing/hero-bg-4.jpg);
+      background-size: cover;
+    }
+
+    span {
+      float: left;
+      height: 200px;
+      width: 25%;
+      border:2px solid white;
+    }
+    span:nth-child(1){
+      background: url(https://mobike.com/cn/assets/themes/moby/img/promo-01.jpg);
+      background-size:cover;
+      background-color:red;
+    }
+    span:nth-child(2){
+      background:url(https://mobike.com/cn/assets/themes/moby/img/promo-02.jpg);
+      background-size:cover;
+    }
+    span:nth-child(3){
+      background:url(https://mobike.com/cn/assets/themes/moby/img/promo-03.jpg);
+      background-size:cover;
+    }
+    span:nth-child(4){
+      background:url(https://mobike.com/cn/assets/themes/moby/img/promo-04.jpg);
+      background-size:cover;
+    }
+    @media (max-width: 800px){
+      span {
+        width: 50%;
+      }
+    }
+    @media (max-width: 500px){
+      span {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+    <section>
+    </section>
+    <div>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+</body>
+</html>
