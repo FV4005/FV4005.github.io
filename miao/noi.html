@@ -12,7 +12,7 @@
     var a = Number(+prompt('请输入a'));
     var b = Number(+prompt('请输入b'));
     var c = Number(+prompt('请输入c'));
-    if (-10000 < a < 10000 && -10000 < b < 10000 && -10000 < c < 10000){
+    if (-10000 < a&& a < 10000 && -10000 < b &&  b< 10000 && -10000 < c && c < 10000){
     var number = (a+b)*c;
     console.log(number);
   }
@@ -27,7 +27,7 @@
     var a = Number(+prompt('请输入a'));
     var b = Number(+prompt('请输入b'));
     var c = Number(+prompt('请输入c'));
-    if (-10000 < a < 10000 && -10000 < b < 10000 && -10000 < c < 10000){
+    if (-10000 < a && a < 10000 && -10000 < b &&  b< 10000 && -10000 < c && c < 10000){
     var number = (a+b)/c;
     console.log(number);
     }
@@ -104,7 +104,7 @@
  <script type="x" id="ch0103/09">
   var r = Number(+prompt('输入圆的半径'));
   var pi = 3.14159;
-  if (0<r<=10000) {
+  if (0 < r && r <= 10000) {
     var numberd = 2*r;
     var numberc = 2 * pi * r;
     var numberm = pi * r * r;
@@ -245,7 +245,7 @@ console.log(result);
 <script type="x" id="ch0103/20">
 
 var n = Number(+prompt('输入N的值'))
-if (0<= n <31){
+if (0<= n && n <31){
   var result = Math.pow(2,n);
   console.log(result);
 }
@@ -310,7 +310,7 @@ if (a%2==0) {
 var x = Number(+prompt('输入x的值'));
 var y = Number(+prompt('输入y的值'));
 
-if (0<= x < Math.pow(2,32)&&Math.pow(-2,31)<= y <Math.pow(2,31)) {
+if (0<= x && x< Math.pow(2,32)&&Math.pow(-2,31)<= y && y <Math.pow(2,31)) {
   if (x>y) {
     console.log('>');
   }else if (x == y) {
@@ -329,7 +329,7 @@ if (0<= x < Math.pow(2,32)&&Math.pow(-2,31)<= y <Math.pow(2,31)) {
 <script type="x" id="ch0104/06">
 
 var n = Number(+prompt('输入一个数'))
-if (n>=10&&n<=99&&0<n<=1000) {
+if (n >= 10 && n <= 99 && 0< n && n <= 1000) {
   console.log('1');
 }else(
   console.log('0');
@@ -343,7 +343,7 @@ if (n>=10&&n<=99&&0<n<=1000) {
 var a = Number(+prompt('幸运个数'));
 var b = Number(+prompt('鼓励个数'));
 
-if (a >=10 || b>=20) {
+if (a >= 10 || b >= 20) {
  console.log('1');
 }else{
   console.log('0');
@@ -355,7 +355,7 @@ if (a >=10 || b>=20) {
 <script type="x" id="ch0104/08">
 
 var n = Number(+prompt("输入一个数"));
-if (-1000000<n<1000000) {
+if (-1000000 < n && n < 1000000) {
   if (n%3==0 && n%5==0) {
     console.log('YES');
   }else{
@@ -401,7 +401,7 @@ if (a%3!=0 && a%5!=0 && a%7!=0) {
   var a = Number(+prompt('输入语文成绩'));
   var b = Number(+prompt('输入数学成绩'));
 
-  if (0<= a <= 100) {
+  if (0 <= a && a <= 100) {
     if (a<60&&b>=60) {
       console.log('1');
     }else if (a>=60&&b<60){
@@ -447,15 +447,15 @@ if (a%3!=0 && a%5!=0 && a%7!=0) {
 
  var n =Number(+prompt('输入一个浮点数'));
  if (0 <= n < 20) {
-     if ( 0 <= n < 5) {
+     if ( 0 <= n && n < 5) {
       var y = -n + 2.5;
       var result = y.toFixed(3);
       console.log(result);
-    }else if (5 <= n < 10) {
+    }else if (5 <= n && n < 10) {
      var y = 2-1.5(n-3)(n-3);
      var result = y.toFixed(3);
      console.log(result);
-    }else if (10 <= n < 20) {
+    }else if (10 <= n && n < 20) {
       var y = n/2-1.5;
       var result = y.toFixed(3);
       console.log(result);
@@ -529,7 +529,7 @@ var b = Number(+prompt('输入第二条线段长度'));
 var c = Number(+prompt('输入第三条线段长度'));
 
 
-if (a+b>c&&a+c>b&&b+c>a && a-b<c&&a-c<b&&b-c<a){
+if (a+b> c && a+c> b && b+c> a && a-b< c && a - c < b &&b - c <a){
   console.log('yes');
 }else{
   console.log('no');
@@ -569,7 +569,7 @@ if (0<=Math.abs(x)&&Math.abs(x)<=1&&0<=Math.abs(y)&&Math.abs(y)<=1) {
   var a = Number(+prompt('第一个数'));
   var b = Number(+prompt('第二个数'));
   var c = Number(+prompt('操作符'));
-  if (c=="/"&&b!=0) {
+  if (c=="/" && b!=0) {
     var number = a/b;
     console.log(number);
   }else if (c=="+") {
