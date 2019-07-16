@@ -67,5 +67,53 @@ var fv4005 = {
     }
     return result
   },
-
+//negate 反函数
+negate:function (f){
+  return function(...args){
+    return !f(...args)
+  }
+},
+//
+flip:function(func){
+  return function(...args){
+    return func(...args.reverse())
+  }
+},
+//before
+before:function(){
+  var times = 0
+  var lastResult
+  return function(...args){
+    times++
+    if(times < n){
+      return lastResult = func(...args)
+    }else{
+      return lastResult
+    }
+  }
+},
+//after
+// after:function(){
+//   var times = 0
+//   return function(...args){
+//     times++
+//     if(times < n){
+//       return
+//     }else{
+//       return func(...args)
+//     }
+//   }
+// },
+//ary
+ary:function(f,n = f.length){
+  return function (...args){
+    return f(...args.slice(0,n))
+  }
+},
+//spread
+spread:function(f){
+  return function(ary){
+    return f(...ary)
+  }
+}
 }
