@@ -2,14 +2,14 @@ var fv4005 = {
   compact: function(ary) {
     return ary.filter(it => it)
   },
+    //数组过滤
   filter: function(ary,test){
-  //数组过滤
     if(ary === undefined){
       ary = []
     }
     var passed = []
     for(var i = 0;i < ary.length;i++){
-      if(test(ary[i])){
+      if(test(ary[i],i,ary)){
         passed.push(ary[i])
       }
     }
@@ -27,8 +27,7 @@ var fv4005 = {
     for(var i = 0; i < ary2.length;i++){
       ary1.push(ary2[i])
     }
-    newary = newary.push(ary1)
-    return newary
+    return ary1
   },
 //深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回
   flat:function(ary) {
@@ -73,7 +72,7 @@ negate:function (f){
     return !f(...args)
   }
 },
-//
+//flip
 flip:function(func){
   return function(...args){
     return func(...args.reverse())
@@ -115,5 +114,28 @@ spread:function(f){
   return function(ary){
     return f(...ary)
   }
+},
+//property
+property:function(propName){
+  return function(obj){
+    return obj[propName]
+  }
+},
+//every
+every:function(ary,test){
+  for(var i = 0; i < ary.length; i++){
+    if(!test(ary[i],i,ary)){
+      return false
+    }
+  }
+  return true
+},
+indcludes:function(ary,char){
+  for(var i = 0; i < ary.length; i++){
+    if(ary[i] == char){
+      return true
+    }
+  }
+  return false
 }
 }
