@@ -161,11 +161,6 @@ difference:function(ary,val){
 
 },
 
-flatten:function(ary){
-  var result = [ary(0)]
-  for(var i = 0; i < ary.length ; i++){
-    result = result.concat(ary[i])
-  }
-  return result
-}
+
+
 }
