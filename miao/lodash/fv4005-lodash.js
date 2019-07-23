@@ -162,11 +162,28 @@ difference:function(ary,val){
 },
 
 flatten:function(ary){
-  var result = [ary(0)]
+  var result = [ary[0]]
   for(var i = 0; i < ary.length ; i++){
     result = result.concat(ary[i])
   }
   return result
 },
 
+drop:function (array,n = 1){
+  // if(n >= array.length){
+  //   return []
+  // }
+  // if(n == 0){
+  //   return array
+  // }
+  // array.splice(0,n)
+  // return array
+  return array.slice(n)
+  },
+
+  dropRight: function (array,n = 1){
+    if(n == 0) return ary
+     return array.slice(0, n * -1)
+
+ }
 }
