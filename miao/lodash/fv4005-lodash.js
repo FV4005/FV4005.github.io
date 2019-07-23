@@ -181,7 +181,7 @@ drop:function (array,n = 1){
   },
 
 dropRight: function (array,n = 1){
-    if(n === 0) return ary.slice()
+    if(n == 0) return ary
     return array.slice(0, n * - 1)
 
   },
