@@ -160,4 +160,12 @@ difference:function(ary,val){
   return ary
 
 },
+
+flatten:function(ary){
+  var result = [ary(0)]
+  for(var i = 0; i < ary.length ; i++){
+    result = result.concat(ary[i])
+  }
+  return result
+}
 }
