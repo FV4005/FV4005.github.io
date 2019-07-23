@@ -154,8 +154,8 @@ difference:function(ary,val){
 		if(ary[i] == val[j]){
 		 ary.splice(i,1)
    }
+  }
  }
-}
   return ary
 },
 
@@ -163,9 +163,9 @@ flatten:function(array){
   var result = [array[0]];
   for (var i = 1; i < array.length; i++) {
       result = result.concat(array[i]);
-  }
+    }
   return result;
-},
+  },
 
 drop:function (array,n = 1){
   // if(n >= array.length){
@@ -179,9 +179,16 @@ drop:function (array,n = 1){
   return array.slice(n)
   },
 
-  dropRight: function (array,n = 1){
-    if(n == 0) return ary.slice()
-    return array.slice(0, n * -1)
+dropRight: function (array,n = 1){
+    if(n === 0) return ary.slice()
+    return array.slice(0, n * - 1)
 
- }
+  },
+
+dropRightWhile:function(ary,pre){
+  return this.dropWhile(ary.reverse(), pre).reverse();
+  },
+dropWhile:function(ary,pre){
+  return this.dropWhile(ary.slice().reverse(),pre).reverse()
+  },
 }
