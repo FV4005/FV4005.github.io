@@ -155,10 +155,8 @@ difference:function(ary,val){
 		 ary.splice(i,1)
    }
  }
-
 }
   return ary
-
 },
 
 flatten:function(array){
@@ -183,7 +181,7 @@ drop:function (array,n = 1){
 
   dropRight: function (array,n = 1){
     if(n == 0) return ary.slice()
-     return array.slice(0, n * -1)
+    return array.slice(0, n * -1)
 
  }
 }
