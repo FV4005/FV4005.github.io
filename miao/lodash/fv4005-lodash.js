@@ -151,7 +151,11 @@ chunk:function(ary,size){
 difference:function(ary,val){
   for(var i = 0;i < ary.length; i++){
 	for(var j = 0 ; j < val.length; j++){
-		if(ary[i] == val[j]){
+    for(var a of val){
+      var result = []
+      return result.push(a)
+    }
+		if(ary[i] == result[j]){
 		 ary.splice(i,1)
    }
   }
