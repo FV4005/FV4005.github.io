@@ -186,9 +186,16 @@ dropRight: function (array,n = 1){
   },
 
 dropRightWhile:function(ary,pre){
-  return this.dropWhile(ary.reverse(), pre).reverse();
+  return this.dropRightWhile(ary.reverse(), pre).reverse();
   },
 dropWhile:function(ary,pre){
-  return this.dropWhile(ary.slice().reverse(),pre).reverse()
+  return this.dropRightWhile(ary.slice().reverse(),pre).reverse()
+  },
+fill:function (ary,value,start = 0,end = ary.length){
+    for(var i = start; i < end;i++){
+    ary[i] = value
+    }
+
+    return ary
   },
 }
