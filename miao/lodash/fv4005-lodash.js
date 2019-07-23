@@ -161,12 +161,12 @@ difference:function(ary,val){
 
 },
 
-flatten:function(ary){
-  var result = [ary[0]]
-  for(var i = 0; i < ary.length ; i++){
-    result = result.concat(ary[i])
+flatten:function(array){
+  var result = [array[0]];
+  for (var i = 1; i < array.length; i++) {
+      result = result.concat(array[i]);
   }
-  return result
+  return result;
 },
 
 drop:function (array,n = 1){
@@ -182,7 +182,7 @@ drop:function (array,n = 1){
   },
 
   dropRight: function (array,n = 1){
-    if(n == 0) return ary
+    if(n == 0) return ary.slice()
      return array.slice(0, n * -1)
 
  }
