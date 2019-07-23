@@ -139,11 +139,25 @@ indcludes:function(ary,...char){
   }
   return false
 },
+
 chunk:function(ary,size){
   var result = []
   while (ary.length) {
       result.push(ary.splice(0, size))
   }
   return result
+},
+
+difference:function(ary,val){
+  for(var i = 0;i < ary.length; i++){
+	for(var j = 0 ; j < val.length; j++){
+		if(ary[i] == val[j]){
+		 ary.splice(i,1)
+   }
+ }
+
+}
+  return ary
+
 },
 }
