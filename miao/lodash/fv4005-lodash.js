@@ -149,7 +149,7 @@ chunk:function(ary,size){
 },
 
 difference:function difference(ary,...val){
-  var args = [...val]
+    var args = [...val]
     for(var i = 0;i < ary.length; i++){
     for(var j = 0 ; j < val.length; j++){
       if(ary[i] == args[j]){
