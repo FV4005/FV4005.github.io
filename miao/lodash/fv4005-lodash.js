@@ -148,21 +148,17 @@ chunk:function(ary,size){
   return result
 },
 
-difference:function(ary,val){
-  for(var a of val){
-    var result = []
-    return result.push(a)
-  }
-  for(var i = 0;i < ary.length; i++){
-	for(var j = 0 ; j < val.length; j++){
-
-		if(ary[i] == result[j]){
-		 ary.splice(i,1)
+difference:function difference(ary,...val){
+  var args = [...val]
+    for(var i = 0;i < ary.length; i++){
+    for(var j = 0 ; j < val.length; j++){
+      if(ary[i] == args[j]){
+       ary.splice(i,1)
+     }
+    }
    }
-  }
- }
-  return ary
-},
+    return ary
+  },
 
 flatten:function(array){
   var result = [array[0]];
