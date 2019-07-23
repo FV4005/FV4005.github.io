@@ -15,20 +15,21 @@ var fv4005 = {
     }
     return passed
   },
-  concat: function(ary1,ary2) {
-//连接两个或多个数组，并将新的数组返回
-    if(ary1 === undefined){
-      ary1 = []
-    }
-    if(ary2 === undefined){
-      ary2 = []
-    }
-    var newary = []
-    for(var i = 0; i < ary2.length;i++){
-      ary1.push(ary2[i])
-    }
-    return ary1
-  },
+//   concat: function(ary1,...ary2) {
+// //连接两个或多个数组，并将新的数组返回
+//     if(ary1 === undefined){
+//       ary1 = []
+//     }
+//     if(ary2 === undefined){
+//       ary2 = []
+//     }
+//     var newary = [...ary2]
+//     for(var i = 0; i < ary2.length;i++){
+//       ary1.push( ary2[i])
+//     }
+//     newary = newary.push(ary1)
+//     return newary
+//   },
 //深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回
   flat:function(ary) {
     var result = []
@@ -130,12 +131,19 @@ every:function(ary,test){
   }
   return true
 },
-indcludes:function(ary,char){
+indcludes:function(ary,...char){
   for(var i = 0; i < ary.length; i++){
     if(ary[i] == char){
       return true
     }
   }
   return false
-}
+},
+chunk:function(ary,size){
+  var result = []
+  while (ary.length) {
+      result.push(ary.splice(0, size))
+  }
+  return result
+},
 }
