@@ -258,7 +258,7 @@ indexOf:function (array, value, fromIndex=0) {
   } else {
       var l = array.length - 1 + fromIndex
       if (l < 0) {
-          for (var i = 0; i < array.length; i--) {
+          for (var i = 0; i < array.length; i++) {
               if (array[i] == value) {
                   return i
               }
