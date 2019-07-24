@@ -245,5 +245,36 @@ intersection:function ([arrays]){
  }
    return [b[j]];
 },
+indexOf:function (array, value, fromIndex=0) {
+
+  if (fromIndex >= 0) {
+      for (var i = fromIndex; i < array.length; i++) {
+          if (array[i] == value) {
+              return i
+              break
+          }
+      }
+      return -1
+  } else {
+      var l = array.length - 1 + fromIndex
+      if (l < 0) {
+          for (var i = 0; i < array.length; i--) {
+              if (array[i] == value) {
+                  return i
+              }
+          }
+          return -1
+      } else {
+          for (var i = array.length - 1; i > l; i--) {
+              if (array[i] == value) {
+                  return i
+              }
+          }
+          return -1
+      }
+
+  }
+
+},
 
 }
