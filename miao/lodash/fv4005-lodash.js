@@ -217,25 +217,34 @@ head:function (ary){
   if(!ary) return null
   return ary[0]
 },
-indexOf:function (array,value,fromIndex=0){
+indexOf:function(array, value, fromIndex=0) {
 
-  if(fromIndex >= 0){
-	for(var i = fromIndex; i < array.length;i++){
-		if(array[i] == value){
-			return i
-			break
-	  }
-	}
-	return -1
-  }else{
-	for(var i = array.length -1 ; i > array.length - 1 + fromIndex;i--){
-	  if(array[i] == value){
-			return i
-			}
-		}
-	return -1
-	}
-
+if (fromIndex >= 0) {
+  for (var i = fromIndex; i < array.length; i+) {
+        if (array[i] == value) {
+            return i
+            break
+        }
+    }
+    return -1
+} else {
+    var l = array.length - 1 + fromIndex
+    if (l < 0) {
+        for (var i = array.length - 1; i > 0;i--) {
+            if (array[i] == value) {
+                return i
+            }
+        }
+        return -1
+    } else {
+        for (var i = array.length - 1; i > l;i--) {
+            if (array[i] == value) {
+                return i
+            }
+        }
+        return -1
+    }
+}
 },
 initial:function (array){
   return array.slice(0,array.length-1)
