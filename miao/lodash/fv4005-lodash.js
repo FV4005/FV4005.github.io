@@ -5,6 +5,7 @@ Array.prototype.flatten=function(){
   },[]);
 };
 
+
 var fv4005 = {
   compact: function(ary) {
     return ary.filter(it => it)
@@ -287,5 +288,19 @@ join:function (array,sep){
 
   }
 return res
+},
+last:function (ary){
+  if(ary == []) return undefined
+  if(!ary) return null
+  return ary[ary.length-1]
+},
+fromPairs:function ([...pairs]){
+  var a = [...pairs]
+  var args = a.flatten()
+  var result = {}
+  for(var i = 0 ; i < args.length; i++){
+    result.push(args[i])
+  }
+  return result
 },
 }
