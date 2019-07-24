@@ -282,7 +282,7 @@ join:function (array,sep){
 	if(i == array.length-1){
 	  res += array[i]
     }else{
-	  res += array[i] + sep
+	  res += '' + array[i] + sep
 	}
 
   }
