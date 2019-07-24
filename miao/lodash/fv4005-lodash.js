@@ -1,3 +1,10 @@
+Array.prototype.flatten=function(){
+  return this.reduce(function(prev, cur) {
+      var moreArr = [].concat(cur).some(Array.isArray);  //判断cur是不是一个数组
+      return prev.concat(moreArr ? cur.flatten() : cur);
+  },[]);
+};
+
 var fv4005 = {
   compact: function(ary) {
     return ary.filter(it => it)
@@ -256,6 +263,6 @@ intersection:function ([arrays]){
     }
  }
    return [b[j]];
-}
+},
 
 }
