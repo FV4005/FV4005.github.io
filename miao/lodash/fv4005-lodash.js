@@ -3,18 +3,18 @@ var fv4005 = {
     return ary.filter(it => it)
   },
     //数组过滤
-  filter: function(ary,test){
-    if(ary === undefined){
-      ary = []
+filter: function(ary,test){
+  if(ary === undefined){
+    ary = []
+  }
+  var passed = []
+  for(var i = 0;i < ary.length;i++){
+    if(test(ary[i],i,ary)){
+      passed.push(ary[i])
     }
-    var passed = []
-    for(var i = 0;i < ary.length;i++){
-      if(test(ary[i],i,ary)){
-        passed.push(ary[i])
-      }
-    }
-    return passed
-  },
+  }
+  return passed
+},
 //   concat: function(ary1,...ary2) {
 // //连接两个或多个数组，并将新的数组返回
 //     if(ary1 === undefined){
@@ -31,29 +31,29 @@ var fv4005 = {
 //     return newary
 //   },
 //深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回
-  flat:function(ary) {
-    var result = []
-    for(var i = 0; i < ary.length; i++){
-      if(Array.isArray(ary[i])){
-        for(var j = 0; j < ary[i].length; j++){
-          result.push(ary[i][j])
-        }
-      }else{
-        result.push(ary[i])
+flat:function(ary) {
+  var result = []
+  for(var i = 0; i < ary.length; i++){
+    if(Array.isArray(ary[i])){
+      for(var j = 0; j < ary[i].length; j++){
+        result.push(ary[i][j])
       }
+    }else{
+      result.push(ary[i])
     }
-    return result
-  },
+  }
+  return result
+},
 //判断一个数组是否包含一个指定的值
-  includes:function(ary,value){
-    for(var i = 0; i < ary.length;i++){
-      if(ary[i] === value){
-        return true
-      }else{
-        return false
-      }
+includes:function(ary,value){
+  for(var i = 0; i < ary.length;i++){
+    if(ary[i] === value){
+      return true
+    }else{
+      return false
     }
-  },
+  }
+},
   slice:function(ary,start,end){
     var result = []
     if(start === undefined){
@@ -107,7 +107,7 @@ before:function(){
 //ary
 ary:function(f,n = f.length){
   return function (...args){
-    return f(...args.slice(0,n))
+  return f(...args.slice(0,n))
   }
 },
 //spread
@@ -119,7 +119,7 @@ spread:function(f){
 //property
 property:function(propName){
   return function(obj){
-    return obj[propName]
+  return obj[propName]
   }
 },
 //every
@@ -148,17 +148,18 @@ chunk:function(ary,size){
   return result
 },
 
-difference:function difference(ary,...val){
-    var args = [...val]
-    for(var i = 0;i < ary.length; i++){
-    for(var j = 0 ; j < val.length; j++){
-      if(ary[i] == args[j]){
-       ary.splice(i,1)
-     }
-    }
-   }
-    return ary
-  },
+difference:function (ary, ...val) {
+  var a = [...val]
+  var args = a.flatten()
+  for (var i = 0; i < ary.length; i++) {
+      for (var j = 0; j < args.length; j++) {
+          if (ary[i] == args[j]) {
+              ary.splice(i, 1)
+          }
+      }
+  }
+  return ary
+},
 
 flatten:function(array){
   var result = [array[0]];
@@ -166,6 +167,11 @@ flatten:function(array){
       result = result.concat(array[i]);
     }
   return result;
+
+//   return this.reduce(function(prev, cur) {
+//     var moreArr = [].concat(cur).some(Array.isArray);  //判断cur是不是一个数组
+//     return prev.concat(moreArr ? cur.flatten() : cur);
+// },[])
   },
 
 drop:function (array,n = 1){
@@ -187,7 +193,7 @@ dropRight: function (array,n = 1){
   },
 
 dropRightWhile:function(ary,pre){
-  return this.dropRightWhile(ary.reverse(), pre).reverse();
+  return this.dropWhile(ary.reverse(), pre).reverse();
   },
 dropWhile:function(ary,pre){
   return this.dropRightWhile(ary.slice().reverse(),pre).reverse()
@@ -199,4 +205,57 @@ fill:function (ary,value,start = 0,end = ary.length){
 
     return ary
   },
+head:function (ary){
+  if(ary == []) return undefined
+  if(!ary) return null
+  return ary[0]
+},
+indexOf:function (array,value,fromIndex=0){
+
+  if(fromIndex >= 0){
+	for(var i = fromIndex; i < array.length;i++){
+		if(array[i] == value){
+			return i
+			break
+	  }
+	}
+	return -1
+  }else{
+	for(var i = array.length -1 ; i > array.length - 1 + fromIndex;i--){
+	  if(array[i] == value){
+			return i
+			}
+		}
+	return -1
+	}
+
+},
+initial:function (array){
+  return array.slice(0,array.length-1)
+},
+intersection:function ([arrays]){
+	var a = [arrays]
+	var b = a.flatten()
+  var map = {}
+
+  for(var i = 0; i < b.length ; i++){
+    var chard = b[i]
+    if(chard in map){
+      map[chard]++
+    }else{
+      map[chard] = 1
+    }
+  }
+
+ var max = 0
+
+ for(var i = 0;i < b.length;i++){
+   if( max < map[chard]){
+     var j = i;
+     max = map[chard];
+    }
+ }
+   return [b[j]];
+}
+
 }
