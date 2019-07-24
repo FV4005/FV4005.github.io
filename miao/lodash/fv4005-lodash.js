@@ -276,5 +276,16 @@ indexOf:function (array, value, fromIndex=0) {
   }
 
 },
+join:function (array,sep){
+	var res = ''
+  for(var i = 0; i<array.length; i++){
+	if(i == array.length-1){
+	  res += array[i]
+    }else{
+	  res += array[i] + sep
+	}
 
+  }
+return res
+},
 }
