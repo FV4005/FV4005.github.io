@@ -257,13 +257,12 @@ indexOf:function (array, value, fromIndex=0) {
     return -1
 },
 lastIndexOf:function (array,value,fromIndex = 0){
-	for (var i = array.length; i > fromIndex; i--) {
-    if (array[i] == value) {
+	for (let i = fromIndex; i >= 0; i--) {
+    if (array[i] === value) {
         return i
     }
-
-  }
-  return -1
+}
+return -1
 },
 nth:function (array,n = 0){
   if(n >= 0){
