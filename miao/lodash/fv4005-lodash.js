@@ -175,13 +175,15 @@ flatten:function(array){
       result = result.concat(array[i]);
     }
   return result;
+},
+flattenDeep:function(ary){
+  return [].concat(...arr.map(v => {
+    return  Array.isArray(v) ? flattenDeep(v) : v
+  }))
+},
+flattenDepth:function(ary,dep){
 
-//   return this.reduce(function(prev, cur) {
-//     var moreArr = [].concat(cur).some(Array.isArray);  //判断cur是不是一个数组
-//     return prev.concat(moreArr ? cur.flatten() : cur);
-// },[])
-  },
-
+},
 drop:function (array,n = 1){
   // if(n >= array.length){
   //   return []
