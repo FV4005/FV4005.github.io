@@ -303,4 +303,9 @@ fromPairs:function ([...pairs]){
   }
   return result
 },
+fromPairs:function(pairs) {
+  var map = {}
+  var x = pairs.forEach(item =>  map[item[0]] = item[1])
+  return map
+},
 }
