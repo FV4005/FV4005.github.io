@@ -312,7 +312,7 @@ isArguments:function (val){
 isArray:function(val){
   return Object.prototype.toString.call(val) === '[object Array]'
 },
-full:function (array,...value){
+pull:function (array,...value){
 	var res = []
 	for(var arySeem in array){
 		if(value.indexOf(arySeem) == -1){
@@ -320,5 +320,5 @@ full:function (array,...value){
 		}
 	}
 	return res
-}
+},
 }
