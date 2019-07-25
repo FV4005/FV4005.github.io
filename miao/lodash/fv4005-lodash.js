@@ -7,11 +7,11 @@ Array.prototype.flatten=function(){
 
 
 var fv4005 = {
-  compact: function(ary) {
-    return ary.filter(it => it)
+  compact: function (ary) {
+    return ary.filter (it => it)
   },
     //数组过滤
-filter: function(ary,test){
+filter: function (ary,test){
   if(ary === undefined){
     ary = []
   }
@@ -39,7 +39,7 @@ filter: function(ary,test){
 //     return newary
 //   },
 //深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回
-flat:function(ary) {
+flat:function (ary) {
   var result = []
   for(var i = 0; i < ary.length; i++){
     if(Array.isArray(ary[i])){
@@ -53,7 +53,7 @@ flat:function(ary) {
   return result
 },
 //判断一个数组是否包含一个指定的值
-includes:function(ary,value){
+includes:function (ary,value){
   for(var i = 0; i < ary.length;i++){
     if(ary[i] === value){
       return true
@@ -62,7 +62,7 @@ includes:function(ary,value){
     }
   }
 },
-  slice:function(ary,start,end){
+  slice:function (ary,start,end){
     var result = []
     if(start === undefined){
       start == 0
@@ -82,16 +82,16 @@ negate:function (f){
   }
 },
 //flip
-flip:function(func){
+flip:function (func){
   return function(...args){
     return func(...args.reverse())
   }
 },
 //before
-before:function(){
+before:function (){
   var times = 0
   var lastResult
-  return function(...args){
+  return function (...args){
     times++
     if(times < n){
       return lastResult = func(...args)
@@ -113,25 +113,25 @@ before:function(){
 //   }
 // },
 //ary
-ary:function(f,n = f.length){
+ary:function (f,n = f.length){
   return function (...args){
   return f(...args.slice(0,n))
   }
 },
 //spread
-spread:function(f){
-  return function(ary){
+spread:function (f){
+  return function (ary){
     return f(...ary)
   }
 },
 //property
-property:function(propName){
-  return function(obj){
+property:function (propName){
+  return function (obj){
   return obj[propName]
   }
 },
 //every
-every:function(ary,test){
+every:function (ary,test){
   for(var i = 0; i < ary.length; i++){
     if(!test(ary[i],i,ary)){
       return false
@@ -139,7 +139,7 @@ every:function(ary,test){
   }
   return true
 },
-indcludes:function(ary,...char){
+indcludes:function (ary,...char){
   for(var i = 0; i < ary.length; i++){
     if(ary[i] == char){
       return true
@@ -148,7 +148,7 @@ indcludes:function(ary,...char){
   return false
 },
 
-chunk:function(ary,size){
+chunk:function (ary,size){
   var result = []
   while (ary.length) {
       result.push(ary.splice(0, size))
@@ -169,19 +169,19 @@ difference:function (ary, ...val) {
   return ary
 },
 
-flatten:function(array){
+flatten:function (array){
   var result = [array[0]];
   for (var i = 1; i < array.length; i++) {
       result = result.concat(array[i]);
     }
   return result;
 },
-flattenDeep:function(ary){
+flattenDeep:function (ary){
   return [].concat(...ary.map(v => {
     return  Array.isArray(v) ? flattenDeep(v) : v
   }))
 },
-flattenDepth:function(ary,dep){
+flattenDepth:function (ary,dep){
 
 },
 drop:function (array,n = 1){
@@ -202,7 +202,7 @@ dropRight: function (array,n = 1){
 
   },
 
-dropRightWhile:function(ary,pre){
+dropRightWhile:function (ary,pre){
   return this.dropWhile(ary.reverse(), pre).reverse();
   },
 dropWhile:function(ary,pre){
@@ -249,35 +249,31 @@ intersection:function ([arrays]){
    return [b[j]];
 },
 indexOf:function (array, value, fromIndex=0) {
-
-  if (fromIndex >= 0) {
-      for (var i = fromIndex; i < array.length; i++) {
-          if (array[i] == value) {
-              return i
-              break
-          }
+    for(var i = fromIdex; i < ary.length; i++){
+      if(ary[i] == value){
+      return i
       }
-      return -1
-  } else {
-      var l = array.length - 1 + fromIndex
-      if (l < 0) {
-          for (var i = 0; i < array.length; i++) {
-              if (array[i] == value) {
-                  return i
-              }
-          }
-          return -1
-      } else {
-          for (var i = array.length - 1; i > l; i--) {
-              if (array[i] == value) {
-                  return i
-              }
-          }
-          return -1
-      }
+    }
+    return -1
+},
+lastIndexOf:function (ary,value,fromIdex = 0){
+	for(var i = ary.length; i < fromIdex; i--){
+	  if(ary[i] == value){
+		return i
+	  }
 
+	}
+	return -1
+},
+nth:function (array,n = 0){
+  if(n >= 0){
+	return array[n]
   }
-
+else{
+	array = array.reverse()
+	n = Math.abs(n)
+	return array[n]
+  }
 },
 join:function (array,sep){
 	var res = ''
@@ -305,9 +301,24 @@ fromPairs:function ([...pairs]){
   }
   return result
 },
-fromPairs:function(pairs) {
+fromPairs:function (pairs) {
   var map = {}
   var x = pairs.forEach(item =>  map[item[0]] = item[1])
   return map
 },
+isArguments:function (val){
+  return Object.prototype.toString.call(val) === '[object Arguments]'
+},
+isArray:function(val){
+  return Object.prototype.toString.call(val) === '[object Array]'
+},
+full:function (array,...value){
+	var res = []
+	for(var arySeem in array){
+		if(value.indexOf(arySeem) == -1){
+			res.push(arySeem)
+		}
+	}
+	return res
+}
 }
