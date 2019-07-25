@@ -256,7 +256,7 @@ indexOf:function (array, value, fromIndex=0) {
     }
     return -1
 },
-lastIndexOf:function (array,value,fromIndex = 0){
+lastIndexOf:function (array,value,fromIndex = array.length - 1){
 	for (let i = fromIndex; i >= 0; i--) {
     if (array[i] === value) {
         return i
@@ -313,7 +313,7 @@ isArray:function(val){
 },
 pull:function (array,...value){
 	var res = []
-	for(var arySeem in array){
+	for(var arySeem of array){
 		if(value.indexOf(arySeem) == -1){
 			res.push(arySeem)
 		}
