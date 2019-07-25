@@ -272,7 +272,7 @@ nth:function (array,n = 0){
 else{
 	array = array.reverse()
 	n = Math.abs(n)
-	return array[n]
+	return array[n-1]
   }
 },
 join:function (array,sep){
