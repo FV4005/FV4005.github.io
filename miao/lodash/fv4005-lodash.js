@@ -249,16 +249,16 @@ intersection:function ([arrays]){
    return [b[j]];
 },
 indexOf:function (array, value, fromIndex=0) {
-    for(var i = fromIdex; i < ary.length; i++){
-      if(ary[i] == value){
+    for(var i = fromIndex; i < array.length; i++){
+      if(array[i] == value){
       return i
       }
     }
     return -1
 },
-lastIndexOf:function (ary,value,fromIdex = 0){
-	for(var i = ary.length; i < fromIdex; i--){
-	  if(ary[i] == value){
+lastIndexOf:function (array,value,fromIndex = 0){
+	for(var i = array.length; i < fromIndex; i--){
+	  if(array[i] == value){
 		return i
 	  }
 
