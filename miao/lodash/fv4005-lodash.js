@@ -177,7 +177,7 @@ flatten:function(array){
   return result;
 },
 flattenDeep:function(ary){
-  return [].concat(...arr.map(v => {
+  return [].concat(...ary.map(v => {
     return  Array.isArray(v) ? flattenDeep(v) : v
   }))
 },
