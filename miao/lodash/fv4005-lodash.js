@@ -311,6 +311,9 @@ isArguments:function (val){
 isArray:function(val){
   return Object.prototype.toString.call(val) === '[object Array]'
 },
+isBoolean:function(val){
+  return Object.property.toString.call(val) === '[object Boolean]'
+},
 pull:function (array,...value){
 	var res = []
 	for(var arySeem of array){
