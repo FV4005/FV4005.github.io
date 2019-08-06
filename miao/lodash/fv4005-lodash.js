@@ -323,4 +323,44 @@ pull:function (array,...value){
 	}
 	return res
 },
+reverse: function (array){
+  var result = []
+  var l = array.length - 1
+  for(var i = l; i >= 0; i--){
+    result.push(array[i])
+  }
+  return result
+  },
+sortedIndex: function (array,value){
+    var result = [value]
+
+    var con = array.concat(result)
+
+    con.sort((a,b)=>a - b)
+
+    return con.indexOf(value)
+
+  },
+union: function (...arrs) {
+    return  Array.from(new Set (flatten(arrs)));
+},
+uniq: function (array){
+	var result = []
+	for(var i = 0 ; i < array.length ;i++){
+	  if(result.indexOf(array[i]) == -1){
+		result.push(array[i])
+		}
+  }
+	return result
+},
+zip: function (...ary){
+	var res = []
+	for(var i = 0; i< ary[0].length; i++){
+	  res[i] = []
+	for(var j = 0 ;j < ary.length ; j++){
+	  res[i][j] = ary[j][i]
+		}
+	}
+	return res
+},
 }
