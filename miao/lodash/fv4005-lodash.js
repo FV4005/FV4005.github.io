@@ -361,6 +361,9 @@ isNaN: function (val){
 }
 return false;
 },
+isNull: function (val){
+return val == null
+},
 reverse: function (array){
   var result = []
   var l = array.length - 1
