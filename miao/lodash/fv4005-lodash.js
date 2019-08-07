@@ -312,19 +312,19 @@ isArray:function(val){
   return Object.prototype.toString.call(val) === '[object Array]'
 },
 isBoolean:function(val){
-  return Object.property.toString.call(val) === '[object Boolean]'
+  return Object.prototype.toString.call(val) === '[object Boolean]'
 },
 isDate: function (val){
   return Object.prototype.toString.call(val) == '[object Date]'
 
 },
 isElement:function (val){
-  x
+  return Object.prototype.toString.call(val) == '[object Element]'
 },
 isEmpty:function (val){
-  var a = true
+  var f = true
   for(let key in val){
-	return a
+	return f
   }
   return false
 },
