@@ -355,6 +355,10 @@ isInteger: function (value){
 	return false
   }
 },
+isNaN: function (val){
+  if(val.toString() === 'undefined') return false;
+ return  Number(val).toString() ==='NaN'
+},
 reverse: function (array){
   var result = []
   var l = array.length - 1
