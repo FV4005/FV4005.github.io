@@ -1,4 +1,4 @@
-Array.prototype.flatten=function(){
+Array.prototype.flatten = function(){
   return this.reduce(function(prev, cur) {
       var moreArr = [].concat(cur).some(Array.isArray);  //判断cur是不是一个数组
       return prev.concat(moreArr ? cur.flatten() : cur);
@@ -314,6 +314,29 @@ isArray:function(val){
 isBoolean:function(val){
   return Object.property.toString.call(val) === '[object Boolean]'
 },
+isDate: function (val){
+  return Object.prototype.toString.call(val) == '[object Date]'
+
+},
+isElement:function (val){
+  x
+},
+isEmpty:function (val){
+  var a = true
+  for(let key in val){
+	return a
+  }
+  return false
+},
+isError: function(val){
+  return Object.prototype.toString.call(val) == '[object Error]'
+},
+isFinite: function (val){
+	return Number(val) == Infinity
+},
+isFunction: function (value){
+	return typeof(value) == 'function'
+},
 pull:function (array,...value){
 	var res = []
 	for(var arySeem of array){
@@ -322,6 +345,13 @@ pull:function (array,...value){
 		}
 	}
 	return res
+},
+isInteger: function (value){
+  if(!isNaN(value) && value % 1 === 0){
+	return true
+  }else{
+	return false
+  }
 },
 reverse: function (array){
   var result = []
@@ -342,7 +372,7 @@ sortedIndex: function (array,value){
 
   },
 union: function (...arrs) {
-    return  Array.from(new Set (flatten(arrs)));
+    return  Array.from(new Set (arrs.flatten()));
 },
 uniq: function (array){
 	var result = []
@@ -363,4 +393,45 @@ zip: function (...ary){
 	}
 	return res
 },
+unzip: function (...ary){
+	var res = []
+	for(var i = 0; i< ary[0].length; i++){
+	  res[i] = []
+	for(var j = 0 ;j < ary.length ; j++){
+	  res[i][j] = ary[j][i]
+		}
+	}
+	return res
+},
+without: function (array,...value){
+  var val = [...value]
+  var res = []
+  for(let char of array){
+    if(val.indexOf(char) == -1 ){
+      res.push(char)
+    }
+  }
+  return res
+},
+xor: function (...arr){
+  var ary = [...arr].flatten()
+  var map = {}
+  var res = []
+  for(var i = 0; i < ary.length; i++){
+	var rechar = ary[i]
+	if(rechar in map){
+	  map[rechar]++
+	}else{
+	  map[rechar] = 1
+	}
+  }
+  for(var i = 0; i < ary.length; i++){
+	var countone = ary[i]
+    if(map[countone] == 1){
+       res.push(countone)
+      }
+    }
+   return res
+},
+
 }
