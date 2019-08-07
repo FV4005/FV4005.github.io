@@ -393,7 +393,7 @@ zip: function (...ary){
 	}
 	return res
 },
-unzip: function (...ary){
+unzip: function arr(ary){
 	var res = []
 	for(var i = 0; i< ary[0].length; i++){
 	  res[i] = []
@@ -432,6 +432,41 @@ xor: function (...arr){
       }
     }
    return res
+},
+constant: function (val){
+  return function(){
+    return val
+  }
+},
+memoize: function (f){
+  var map = {}
+  return function(a){
+	if(a in map){
+	  return f(a)
+	} else{
+	  map[a] = f[a]
+	}
+  }
+},
+curry: function (f,length = f.length){
+  return function curry(f, length = f.length) {
+  return function(...args) {
+    if (args.length >= length) {
+      return f(...args)
+    } else {
+      return curry(f.bind(null, ...args), length - args.length)
+    }
+  }
+}
+},
+once: function once(fn){
+  var ifFalse = true
+  return function(){
+      if(ifFalse){
+          ifFalse = false
+          fn()
+      }
+  }
 },
 
 }
