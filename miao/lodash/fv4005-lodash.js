@@ -324,15 +324,16 @@ isElement:function (val){
 isEmpty:function (val){
   var f = true
   for(let key in val){
-	return f
+	return false
   }
-  return false
+  return true
 },
 isError: function(val){
   return Object.prototype.toString.call(val) == '[object Error]'
 },
 isFinite: function (val){
-	return Number(val) == Infinity
+	if(typeof(val) == "string") return false;
+  return Number(val) !== Infinity
 },
 isFunction: function (value){
 	return typeof(value) == 'function'
@@ -347,6 +348,7 @@ pull:function (array,...value){
 	return res
 },
 isInteger: function (value){
+  if(typeof(val) == "string") return false;
   if(!isNaN(value) && value % 1 === 0){
 	return true
   }else{
