@@ -348,7 +348,7 @@ pull:function (array,...value){
 	return res
 },
 isInteger: function (value){
-  if(typeof(val) == "string") return false;
+  if(typeof(value) == "string") return false;
   if(!isNaN(value) && value % 1 === 0){
 	return true
   }else{
