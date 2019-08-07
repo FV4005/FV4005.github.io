@@ -356,8 +356,10 @@ isInteger: function (value){
   }
 },
 isNaN: function (val){
-  if(val.toString() === 'undefined') return false;
- return  Number(val).toString() ==='NaN'
+  if (val != undefined && val != null) {
+    return val.toString() === "NaN";
+}
+return false;
 },
 reverse: function (array){
   var result = []
