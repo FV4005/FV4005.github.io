@@ -1,10 +1,10 @@
-Array.prototype.flatten = function(){
-  return this.reduce(function(prev, cur) {
-      var moreArr = [].concat(cur).some(Array.isArray);  //判断cur是不是一个数组
-      return prev.concat(moreArr ? cur.flatten() : cur);
-  },[]);
-};
-
+  Array.prototype.flatten = function(){
+   return this.reduce(function(prev, cur) {
+       var moreArr = [].concat(cur).some(Array.isArray);
+       return prev.concat(moreArr ? cur.flatten() : cur);
+   },[]);
+ };
+  Object.defineProperty(Array.prototype,'flatten',{enumerable:false,writeable:false});
 
 var fv4005 = {
   compact: function (ary) {
@@ -362,7 +362,7 @@ isNaN: function (val){
 return false;
 },
 isNull: function (val){
-return val == null
+return val === null
 },
 reverse: function (array){
   var result = []
