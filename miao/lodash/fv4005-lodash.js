@@ -513,6 +513,6 @@ isNumber:function a(val){
 return +val === val
 },
 isObject:function a(val){
-  return Object.prototype.toString.call(val) === '[object Object]'
+	if(val !== null && typeof(val) === "object" || typeof(val) === "function"){return true}else{return false}
 },
 }
