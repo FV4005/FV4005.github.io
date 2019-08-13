@@ -479,5 +479,57 @@ once: function once(fn){
       }
   }
 },
+findIndex: function (array, predicate, fromIndex = 0) {
+  let len = array == null ? 0 : array.length;
+  if (!len) return -1;
+  let test = iteratee(predicate);
+  for (var i = fromIndex; i < len; i++) {
+      if (test(array[i], i, array)) {
+          return i;
+      }
+  }
+  return -1;
+},
+findLastIndex:function (array, predicate, fromIndex = array.length - 1) {
+  let len = array == null ? 0 : array.length;
+  if (!len) return -1;
+  let test = iteratee(predicate);
+  for (var i = fromIndex; i >= 0; i--) {
+      if (test(array[i], i, array)) {
+          return i;
+      }
+  }
+  return -1;
+},
+isNil:function a(val){
+	if(val === null || val === undefined){
+		return true
+	}else{
+		return false
+	}
+
+},
+isNumber:function a(val){
+	if(val === Infinity || val === -Infinity || isNaN(val) == true){
+		return false
+	}else{
+		return true
+    }
+},
+isNumber:function a(val){
+	if(val === null){
+		return false
+	}else{
+		return true
+  }
+
+	var type = typeof(val)
+
+	if(type == "object" || type == "function"){
+		return true
+	}else{
+		return false
+	}
+},
 
 }
