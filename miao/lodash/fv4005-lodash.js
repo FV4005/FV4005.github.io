@@ -510,26 +510,9 @@ isNil:function a(val){
 
 },
 isNumber:function a(val){
-	if(val === Infinity || val === -Infinity || isNaN(val) == true){
-		return false
-	}else{
-		return true
-    }
+return +val === val
 },
-isNumber:function a(val){
-	if(val === null){
-		return false
-	}else{
-		return true
-  }
-
-	var type = typeof(val)
-
-	if(type == "object" || type == "function"){
-		return true
-	}else{
-		return false
-	}
+isObject:function a(val){
+  return Object.prototype.toString.call(val) === '[object Object]'
 },
-
 }
