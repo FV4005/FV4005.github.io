@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+    
+        .slider{
+            width: 1226px;
+            height: 460px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .slider img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .slider input:checked+img {
+            opacity: 1;
+        }
+        .slider input:checked+img+label {
+              background-color: rgb(255, 255, 255, 0.6);
+              border: 2px solid rgb(62, 62, 62, 0.7);
+              transition: background-color .3s;
+        }
+        .banner input {
+            display: none;
+        }
+        .banner label {
+              position: absolute;
+              top: 424px;
+              left: 563px;
+              z-index: 10;
+        }
+        
+        .banner label {
+              height: 6px;
+              width: 6px;
+              background-color: rgb(102, 102, 102, 0.7);
+              border: 2px solid rgb(172, 172, 172, 0.9);
+              display: inline-block;
+              border-radius: 6px;
+              cursor: pointer;
+              margin-left: 5px;
+          }
+        .banner label:nth-of-type(2) {
+              left: 583px;
+          }
+
+        .banner label:nth-of-type(3) {
+            left: 603px;
+        }
+
+        .banner label:nth-of-type(4) {
+            left: 623px;
+        }
+
+        .banner label:nth-of-type(5) {
+            left: 643px;
+        }
+
+        
+        .bannerLeft .bannerLeft-lable,
+        .bannerRight .bannerRight-lable
+        {
+            height: 69px;
+            width: 41px;
+            top: 50%;
+            margin-top: -35px;
+            display: none;
+            margin-left: 0px;
+            background-color: rgb(0, 0, 0, 0);
+            border-radius: 2px;
+            position: absolute;
+            left: 0 !important;
+            border: 0;
+        }
+        .bannerRight .bannerRight-lable {
+              left: 1184px !important;
+            
+          }
+        .bannerLeft>label:hover,
+        .bannerRight>label:hover{
+            background-color: rgb(0, 0, 0, 0.4);
+        }
+        .bannerLeft>label::before {
+              position: absolute;
+              content: "";
+              line-height: 69px;
+              height: 20px;
+              width: 20px;
+              transform: rotate(-45deg);
+              border-left: 2px solid #bbb;
+              border-top: 2px solid #bbb;
+              margin-left: 14px;
+              margin-top:24px;
+          }
+          .bannerRight>label::before {
+              position: absolute;
+              content: " ";
+              height: 20px;
+              width: 20px;
+              margin-left: 5px;
+              margin-top:24px;
+              transform: rotate(-45deg);
+              border-right: 2px solid #bbb;
+              border-bottom: 2px solid #bbb;
+          }
+          #page1:checked~.bannerLeft label:nth-child(1),
+          #page1:checked~.bannerRight label:nth-child(1) {
+              display: block;
+          }
+
+          #page2:checked~.bannerLeft label:nth-child(2),
+          #page2:checked~.bannerRight label:nth-child(2) {
+              display: block;
+          }
+
+          #page3:checked~.bannerLeft label:nth-child(3),
+          #page3:checked~.bannerRight label:nth-child(3) {
+              display: block;
+          }
+
+          #page4:checked~.bannerLeft label:nth-child(4),
+          #page4:checked~.bannerRight label:nth-child(4) {
+              display: block;
+          }
+
+          #page5:checked~.bannerLeft label:nth-child(5),
+          #page5:checked~.bannerRight label:nth-child(5) {
+              display: block;
+          }
+
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="banner">
+            <input type="radio" name="sliderbanner" id="page1" checked>
+            <img src="http://p1.music.126.net/DpzcCKT0Rui51f5LUltiUg==/109951165016275773.jpg?imageView&quality=89" alt="">
+            <label for="page1"></label>
+            <input type="radio" name="sliderbanner" id="page2">
+            <img src="http://p1.music.126.net/aIGAGsghxB2rRi17Ui9QoA==/109951165017002941.jpg?imageView&quality=89" alt="">
+            <label for="page2"></label>
+            <input type="radio" name="sliderbanner" id="page3">
+            <img src="http://p1.music.126.net/_eBYZS_AHoweCPEiD9eXEg==/109951165016484171.jpg?imageView&quality=89" alt="">
+            <label for="page3"></label>
+            <input type="radio" name="sliderbanner" id="page4">
+            <img src="http://p1.music.126.net/TC0MVZcl7VYqTDiCTsQ4Cg==/109951165017459225.jpg?imageView&quality=89" alt="">
+            <label for="page4"></label>
+            <input type="radio" name="sliderbanner" id="page5">
+            <img src="http://p1.music.126.net/vAFdptLuRj933NLUj9Xuaw==/109951165017465132.jpg?imageView&quality=89" alt="">
+            <label for="page5"></label>
+            <div class="bannerLeft">
+                <label class="bannerLeft-lable" for="page5"></label>
+                <label class="bannerLeft-lable" for="page1"></label>
+                <label class="bannerLeft-lable" for="page2"></label>
+                <label class="bannerLeft-lable" for="page3"></label>
+                <label class="bannerLeft-lable" for="page4"></label>
+            </div>
+            <div class="bannerRight">
+                <label class="bannerRight-lable" for="page2"></label>
+                <label class="bannerRight-lable" for="page3"></label>
+                <label class="bannerRight-lable" for="page4"></label>
+                <label class="bannerRight-lable" for="page5"></label>
+                <label class="bannerRight-lable" for="page1"></label>    
+            </div>
+        </div>
+    </div>
+</body>
+</html>
