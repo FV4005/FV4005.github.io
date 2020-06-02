@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock css</title>
+    <style>
+.clock {
+  width:500px;
+  height: 500px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  position:absolute;
+}
+.clock * {
+  position:absolute;
+}
+.origin{
+  width: 100%;
+  height: 100%;
+  border-radius:50%;
+  background-color: #fff;
+  box-shadow:0 0 40px 2px #233;
+} 
+.num {
+  top:50%;
+  left:50%;
+  font-size:24px;
+}
+
+.h1{
+  transform:translate(-50%,-50%) rotate(30deg) translateY(-220px)  rotate(-30deg);
+}
+.h2{
+  transform:translate(-50%,-50%) rotate(60deg) translateY(-220px)  rotate(-60deg);
+}
+.h3{
+  transform:translate(-50%,-50%) rotate(90deg) translateY(-220px)  rotate(-90deg);
+}
+.h4{
+  transform:translate(-50%,-50%) rotate(120deg) translateY(-220px)  rotate(-120deg);
+}
+.h5{
+  transform:translate(-50%,-50%) rotate(150deg) translateY(-220px)  rotate(-150deg);
+}
+.h6{
+  transform:translate(-50%,-50%) rotate(180deg) translateY(-220px)  rotate(-180deg);
+}
+.h7{
+  transform:translate(-50%,-50%) rotate(210deg) translateY(-220px)  rotate(-210deg);
+}
+.h8{
+  transform:translate(-50%,-50%) rotate(240deg) translateY(-220px)  rotate(-240deg);
+}
+.h9{
+  transform:translate(-50%,-50%) rotate(270deg) translateY(-220px)  rotate(-270deg);
+}
+.h10{
+  transform:translate(-50%,-50%) rotate(300deg) translateY(-220px)  rotate(-300deg);
+}
+.h11{
+  transform:translate(-50%,-50%) rotate(330deg) translateY(-220px)  rotate(-330deg);
+}
+.h12{
+  transform:translate(-50%,-50%) rotate(360deg) translateY(-220px)  rotate(-360deg);
+}
+.ori{
+  width: 20px;
+  height: 0px;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.ori-h{
+  animation:time 43200s steps(60,end) infinite;
+}
+.hour{
+  width:150px;
+  height:10px;
+  background-color: #333;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  border-radius:0 50% 50% 0;
+  transform-origin:left center;
+  animation:hour 720s ease-out infinite;
+}
+.ori-m{
+  animation:time 3600s steps(60,end) infinite;
+}
+.min{
+  width:180px;
+  height:6px;
+  background-color: skyblue;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  border-radius:0 50% 50% 0;
+  transform-origin:left center;
+  animation:min 60s ease-out infinite;
+}
+.ori-s{
+  animation:time 60s steps(60,end) infinite;
+}
+.sec{
+  width:212px;
+  height:4px;
+  background-color: lightsalmon;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  border-radius:0 50% 50% 0;
+  transform-origin:left center;
+  animation:sec 1s ease-out infinite;
+}
+
+
+@keyframes time {
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes hour{
+  0%{
+    transform:rotate(0);
+  }
+  0.03125%{
+    transform:rotate(3deg);
+  }
+  0.0625%{
+    transform:rotate(0);
+  }
+  0.09375%{
+    transform:rotate(-1.5deg);
+  }
+  0.125%{
+    transform:rotate(0);
+  }
+  100%{
+    transform:rotate(0);
+  }
+}
+@keyframes min {
+  0%{
+    transform:rotate(0);
+  }
+  0.125%{
+    transform:rotate(3deg);
+  }
+  0.25%{
+    transform:rotate(0);
+  }
+  0.375%{
+    transform:rotate(-1.5deg);
+  }
+  0.5%{
+    transform:rotate(0);
+  }
+  100%{
+    transform:rotate(0);
+  }
+}
+@keyframes sec {
+  0%{
+    transform:rotate(0);
+  }
+  5%{
+    transform:rotate(2deg);
+  }
+  10%{
+    transform:rotate(0);
+  }
+  15%{
+    transform:rotate(-1deg);
+  }
+  20%{
+    transform:rotate(0);
+  }
+  100%{
+    transform:rotate(0);
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="origin"></div>
+            <div class="num h1">1</div>
+            <div class="num h2">2</div>
+            <div class="num h3">3</div>
+            <div class="num h4">4</div>
+            <div class="num h5">5</div>
+            <div class="num h6">6</div>
+            <div class="num h7">7</div>
+            <div class="num h8">8</div>
+            <div class="num h9">9</div>
+            <div class="num h10">10</div>
+            <div class="num h11">11</div>
+            <div class="num h12">12</div>
+        <div class="ori ori-h">
+            <div class="hour"></div>
+        </div>
+        <div class="ori ori-m">
+            <div class="min"></div>
+        </div>
+        <div class="ori ori-s">
+            <div class="sec"></div>
+        </div>
+    </div>
+</body>
+</html>
